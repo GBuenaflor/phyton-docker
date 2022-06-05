@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-deployment
+spec:
+  selector:
+    matchLabels:
+      app: demo
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: demo
+    spec:
+      containers:
+      - name: demo
+    # enter the path to your image, be sure to include the correct region prefix    
+        image: <region-code>.ocir.io/<tenancy-namespace>/<repo-name>/<image-name>:<tag>
+        ports:
+        - containerPort: 5000
+      imagePullSecrets:
+    # enter the name of the secret you created  
+      - name: <secret-name>
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: demo-service
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 5000
+    protocol: TCP
+    targetPort: 5000
+  selector:
+    app: demo
