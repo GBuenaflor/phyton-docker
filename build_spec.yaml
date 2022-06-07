@@ -14,24 +14,6 @@ env:
     - BUILDRUN_HASH
 
 steps:  
-  - type: Command
-    timeoutInSeconds: 1200
-    name: "Phyton install"
-    command: |
-      cd ${OCI_WORKSPACE_DIR}/node_python
-      install -y python3
-      install -y --enablerepo ol7_optional_latest python3-devel
-      install rh-python36-python-pip.noarch
-      scl enable rh-python36 bash
-      pip install --upgrade pip
-      pip install --upgrade jinja2
-    onFailure:
-      - type: Command
-        command: |
-          echo "Handling Failure"
-          echo "Failure successfully handled"
-        timeoutInSeconds: 40
-        runAs: root
 
   - type: Command
     timeoutInSeconds: 1200
