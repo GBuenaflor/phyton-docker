@@ -16,6 +16,24 @@ env:
 steps:  
 
   - type: Command
+    timeoutInSeconds: 600
+    name: "Pythin Flask install"
+    command: |
+      cd ${OCI_WORKSPACE_DIR}/node_express
+      mkdir flaskDIR
+      cd flaskDIR
+      python3 -m venv venv
+      source venv/bin/activate
+      pip install flask
+    onFailure:
+      - type: Command
+        command: |
+          echo "Handling Failure"
+          echo "Failure successfully handled"
+        timeoutInSeconds: 40
+        runAs: root      
+
+  - type: Command
     timeoutInSeconds: 1200
     name: "Build container image"
     command: |
@@ -25,4 +43,4 @@ steps:
 outputArtifacts:
   - name: output01
     type: DOCKER_IMAGE 
-    location: node-location:01
+    location: node-location:latest
