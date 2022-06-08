@@ -19,7 +19,7 @@ steps:
     timeoutInSeconds: 600
     name: "Pythin Flask install"
     command: |
-      cd ${OCI_WORKSPACE_DIR}/node_express
+      cd ${OCI_WORKSPACE_DIR}/node_python
       mkdir flaskDIR
       cd flaskDIR
       python3 -m venv venv
