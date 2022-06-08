@@ -39,7 +39,11 @@ steps:
     command: |
       cd ${OCI_WORKSPACE_DIR}/node_python
       docker build --pull --rm -t node-location . 
-
+      docker images
+      #docker tag 86c02cee03f7 sin.ocir.io/ax0ovmairnyq/devpoc-repo/demo:01
+      #docker images
+      #docker push sin.ocir.io/ax0ovmairnyq/devpoc-repo/demo:01
+      
 outputArtifacts:
   - name: output01
     type: DOCKER_IMAGE 
