@@ -17,7 +17,7 @@ steps:
 
   - type: Command
     timeoutInSeconds: 600
-    name: "Python Flask install"
+    name: "Python Flask install. Develop By GB Buenaflor and Israel Casidsid"
     command: |
       cd ${OCI_WORKSPACE_DIR}/node_python
       mkdir flaskDIR
@@ -40,8 +40,8 @@ steps:
       cd ${OCI_WORKSPACE_DIR}/node_python
       docker build --pull --rm -t node-location . 
       docker images
-      #docker images -q --format='{{.ID}}' | head -1
-      docker tag (docker images -q --format='{{.ID}}' | head -1) sin.ocir.io/ax0ovmairnyq/devpoc-repo/demo:01
+      IMAGE_ID=$(docker images -q --format='{{.ID}}' | head -1)
+      docker tag IMAGE_ID sin.ocir.io/ax0ovmairnyq/devpoc-repo/demo:01
       docker images
       #docker push sin.ocir.io/ax0ovmairnyq/devpoc-repo/demo:01
       
