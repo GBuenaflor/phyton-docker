@@ -7,7 +7,7 @@ count = 0
 def index():
     global count
     count += 1
-    return 'Hello Oracle' + str(count)
+    return 'Phyton with Flask Website' + str(count)
     #return 'Goodbye Oracle ' + str(count)
 
 if __name__ == '__main__':
