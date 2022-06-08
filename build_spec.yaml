@@ -4,7 +4,7 @@ timeoutInSeconds: 6000
 runAs: root
 shell: bash
 env: 
-  variables:
+  variables:\
     key: "value"
  
   vaultVariables:
@@ -17,7 +17,7 @@ steps:
 
   - type: Command
     timeoutInSeconds: 600
-    name: "Pythin Flask install"
+    name: "Python Flask install"
     command: |
       cd ${OCI_WORKSPACE_DIR}/node_python
       mkdir flaskDIR
@@ -40,6 +40,7 @@ steps:
       cd ${OCI_WORKSPACE_DIR}/node_python
       docker build --pull --rm -t node-location . 
       docker images
+      docker images -q --format='{{.ID}}' | head -1
       #docker tag 86c02cee03f7 sin.ocir.io/ax0ovmairnyq/devpoc-repo/demo:01
       #docker images
       #docker push sin.ocir.io/ax0ovmairnyq/devpoc-repo/demo:01
