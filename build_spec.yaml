@@ -67,6 +67,6 @@ steps:
         runAs: root  
         
 outputArtifacts:
-  - name: DOCKER_IMAGE
+  - name: Dev-POC-DevOpsBuild
     type: DOCKER_IMAGE 
     location: sin.ocir.io/ax0ovmairnyq/devpoc-repo/demo:01 
