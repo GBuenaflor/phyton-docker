@@ -20,8 +20,9 @@ steps:
     timeoutInSeconds: 600
     name: "Python Flask Install/Configuration. Develop By GB Buenaflor and Israel Casidsid" 
     command: |
-      mkdir -p workspace/node_python
+      # mkdir -p workspace/node_python
       # cd ${OCI_WORKSPACE_DIR}/node_python
+      ls -la
       cd workspace/node_python
       mkdir flaskDIR
       cd flaskDIR
@@ -40,14 +41,14 @@ steps:
     timeoutInSeconds: 1200
     name: "Build container image"
     command: |
-     # cd ${OCI_WORKSPACE_DIR}/node_python
-      cd workspace/node_python
+      cd ${OCI_WORKSPACE_DIR}/node_python      
       docker build --pull --rm -t demo . 
       docker images
       DOCKERIMAGE_ID=$(docker images -q --format='{{.ID}}' | head -1)
       docker tag $DOCKERIMAGE_ID sin.ocir.io/ax0ovmairnyq/devpoc-repo/demo:01
       docker images
       docker push sin.ocir.io/ax0ovmairnyq/devpoc-repo/demo:01
+      ls -la
     onFailure:
       - type: Command
         command: |
