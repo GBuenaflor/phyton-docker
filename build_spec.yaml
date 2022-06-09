@@ -49,6 +49,7 @@ steps:
       docker images
      # docker push sin.ocir.io/ax0ovmairnyq/devpoc-repo/demo:01
       ls -la
+      find / -iname 'app.py'
     onFailure:
       - type: Command
         command: |
