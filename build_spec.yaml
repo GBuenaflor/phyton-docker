@@ -41,7 +41,7 @@ steps:
     timeoutInSeconds: 1200
     name: "Build container image"
     command: |
-      cd ${OCI_WORKSPACE_DIR}/node_python      
+     # cd ${OCI_WORKSPACE_DIR}/node_python      
       docker build --pull --rm -t demo . 
       docker images
       DOCKERIMAGE_ID=$(docker images -q --format='{{.ID}}' | head -1)
