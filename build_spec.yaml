@@ -53,7 +53,7 @@ steps:
       docker build --pull --rm -t demo . 
       docker images
       DOCKERIMAGE_ID=$(docker images -q --format='{{.ID}}' | head -1)
-      docker tag $DOCKERIMAGE_ID sin.ocir.io/ax0ovmairnyq/devpoc-repo/demo:01
+      docker tag $DOCKERIMAGE_ID sin.ocir.io/ax0ovmairnyq/devpoc-repo/demo:${BUILDRUN_HASH}
       docker images
      # docker push sin.ocir.io/ax0ovmairnyq/devpoc-repo/demo:${BUILDRUN_HASH}
       ls -la
@@ -69,4 +69,4 @@ steps:
 outputArtifacts:
   - name: Dev-POC-DevOpsBuild
     type: DOCKER_IMAGE 
-    location: sin.ocir.io/ax0ovmairnyq/devpoc-repo/demo:01 
+    location: sin.ocir.io/ax0ovmairnyq/devpoc-repo/demo:${BUILDRUN_HASH} 
