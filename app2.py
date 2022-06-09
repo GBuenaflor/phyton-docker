@@ -23,7 +23,7 @@ count = 0
 def index():
     global count
     count += 1
-    return 'Phyton with Flask Website.' + str(count) 
+    return 'Python with Flask Website.' + str(count) 
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
