@@ -7,7 +7,7 @@ count = 0
 def index():
     global count
     count += 1
-    return 'Python with Flask Website' + str(count)
+    return 'Python with Flask Website...' + str(count)
     #return 'Goodbye Oracle ' + str(count)
 
 if __name__ == '__main__':
