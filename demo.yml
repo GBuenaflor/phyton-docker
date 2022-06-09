@@ -16,7 +16,7 @@ spec:
       - name: demo
     # enter the path to your image, be sure to include the correct region prefix    
         #image: <region-code>.ocir.io/<tenancy-namespace>/<repo-name>/<image-name>:<tag>
-        image: sin.ocir.io/ax0ovmairnyq/devpoc-repo/demo:01
+        image: sin.ocir.io/ax0ovmairnyq/devpoc-repo/demo:${BUILDRUN_HASH}
         ports:
         - containerPort: 5000
       imagePullSecrets:
