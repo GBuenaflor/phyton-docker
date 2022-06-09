@@ -20,7 +20,9 @@ steps:
     timeoutInSeconds: 600
     name: "Python Flask Install/Configuration. Develop By GB Buenaflor and Israel Casidsid" 
     command: |
-      cd ${OCI_WORKSPACE_DIR}/node_python
+      mkdir workspace/node_python
+      # cd ${OCI_WORKSPACE_DIR}/node_python
+      cd workspace/node_python
       mkdir flaskDIR
       cd flaskDIR
       python3 -m venv venv
