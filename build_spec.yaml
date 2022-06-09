@@ -6,6 +6,8 @@ shell: bash
 env: 
   variables:
     key: "value"
+    key: "IMAGE_ID"
+    
  
   vaultVariables:
   #  EXAMPLE_SECRET: "YOUR-SECRET-OCID"
@@ -17,7 +19,7 @@ steps:
 
   - type: Command
     timeoutInSeconds: 600
-    name: "Python Flask install. Develop By GB Buenaflor and Israel Casidsid"
+    name: "Python Flask Install/Configuration" 
     command: |
       cd ${OCI_WORKSPACE_DIR}/node_python
       mkdir flaskDIR
@@ -25,6 +27,7 @@ steps:
       python3 -m venv venv
       source venv/bin/activate
       pip install flask
+      echo "Develop By GB Buenaflor and Israel Casidsid"
     onFailure:
       - type: Command
         command: |
