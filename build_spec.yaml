@@ -44,7 +44,7 @@ steps:
       DOCKERIMAGE_ID=$(docker images -q --format='{{.ID}}' | head -1)
       docker tag $DOCKERIMAGE_ID sin.ocir.io/ax0ovmairnyq/devpoc-repo/demo:01
       docker images
-      docker push sin.ocir.io/ax0ovmairnyq/devpoc-repo/demo:01
+      #docker push sin.ocir.io/ax0ovmairnyq/devpoc-repo/demo:01
       
 outputArtifacts:
   - name: output01
