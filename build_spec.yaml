@@ -28,6 +28,7 @@ steps:
     command: |
       # mkdir -p workspace/node_python
       # cd ${OCI_WORKSPACE_DIR}/node_python
+      pwd
       ls -la
       cd workspace/node_python
       mkdir flaskDIR
@@ -47,7 +48,8 @@ steps:
     timeoutInSeconds: 1200
     name: "Build container image"
     command: |
-     # cd ${OCI_WORKSPACE_DIR}/node_python      
+     # cd ${OCI_WORKSPACE_DIR}/node_python
+      pwd
       docker build --pull --rm -t demo . 
       docker images
       DOCKERIMAGE_ID=$(docker images -q --format='{{.ID}}' | head -1)
@@ -65,6 +67,6 @@ steps:
         runAs: root  
         
 outputArtifacts:
-  - name: Dev-POC-DevOpsBuild
+  - name: DOCKER_IMAGE
     type: DOCKER_IMAGE 
     location: sin.ocir.io/ax0ovmairnyq/devpoc-repo/demo:01 
