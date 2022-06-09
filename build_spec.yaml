@@ -5,9 +5,7 @@ runAs: root
 shell: bash
 env: 
   variables:
-    key: "value"
-    
-    
+    key: "value"    
  
   vaultVariables:
   #  EXAMPLE_SECRET: "YOUR-SECRET-OCID"
@@ -20,15 +18,14 @@ steps:
 
   - type: Command
     timeoutInSeconds: 600
-    name: "Python Flask Install/Configuration" 
+    name: "Python Flask Install/Configuration. Develop By GB Buenaflor and Israel Casidsid" 
     command: |
       cd ${OCI_WORKSPACE_DIR}/node_python
       mkdir flaskDIR
       cd flaskDIR
       python3 -m venv venv
       source venv/bin/activate
-      pip install flask
-      echo "Develop By GB Buenaflor and Israel Casidsid"
+      pip install flask 
     onFailure:
       - type: Command
         command: |
@@ -45,12 +42,12 @@ steps:
       docker build --pull --rm -t demo . 
       docker images
       DOCKERIMAGE_ID=$(docker images -q --format='{{.ID}}' | head -1)
-      docker tag DOCKERIMAGE_ID sin.ocir.io/ax0ovmairnyq/devpoc-repo/demo:01
+      docker tag $DOCKERIMAGE_ID sin.ocir.io/ax0ovmairnyq/devpoc-repo/demo:latest
       docker images
-      #docker push sin.ocir.io/ax0ovmairnyq/devpoc-repo/demo:01
+      #docker push sin.ocir.io/ax0ovmairnyq/devpoc-repo/demo:latest
       
 outputArtifacts:
   - name: output01
     type: DOCKER_IMAGE 
-    location: demo:01
+    location: demo:latest
     #location: node-location:latest
