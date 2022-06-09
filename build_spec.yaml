@@ -47,6 +47,6 @@ steps:
       #docker push sin.ocir.io/ax0ovmairnyq/devpoc-repo/demo:01
       
 outputArtifacts:
-  - name: output01
+  - name: Dev-POC-DevOpsBuild
     type: DOCKER_IMAGE 
     location: demo:01 
