@@ -49,4 +49,4 @@ steps:
 outputArtifacts:
   - name: Dev-POC-DevOpsBuild
     type: DOCKER_IMAGE 
-    location: demo:01 
+    location: sin.ocir.io/ax0ovmairnyq/devpoc-repo/demo:01 
