@@ -6,7 +6,7 @@ shell: bash
 env: 
   variables:
     key: "value"
-    key: "IMAGE_ID"
+    
     
  
   vaultVariables:
@@ -14,7 +14,8 @@ env:
    
   exportedVariables:
     - BUILDRUN_HASH
-
+    - DOCKERIMAGE_ID
+    
 steps:  
 
   - type: Command
@@ -41,14 +42,15 @@ steps:
     name: "Build container image"
     command: |
       cd ${OCI_WORKSPACE_DIR}/node_python
-      docker build --pull --rm -t node-location . 
+      docker build --pull --rm -t demo . 
       docker images
-      IMAGE_ID=$(docker images -q --format='{{.ID}}' | head -1)
-      docker tag IMAGE_ID sin.ocir.io/ax0ovmairnyq/devpoc-repo/demo:01
+      DOCKERIMAGE_ID=$(docker images -q --format='{{.ID}}' | head -1)
+      docker tag DOCKERIMAGE_ID sin.ocir.io/ax0ovmairnyq/devpoc-repo/demo:01
       docker images
       #docker push sin.ocir.io/ax0ovmairnyq/devpoc-repo/demo:01
       
 outputArtifacts:
   - name: output01
     type: DOCKER_IMAGE 
-    location: node-location:latest
+    location: demo:01
+    #location: node-location:latest
