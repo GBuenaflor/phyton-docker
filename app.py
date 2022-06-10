@@ -7,7 +7,7 @@ count = 0
 def index():
     global count
     count += 1
-    return 'Python with Flask Website - OKE implemenation.' + str(count) 
+    return 'Python with Flask Website - OKE implemenation. GB/iSRAel' + str(count) 
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
