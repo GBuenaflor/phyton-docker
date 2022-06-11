@@ -7,7 +7,7 @@ count = 0
 def index():
     global count
     count += 1
-    return 'Python with Flask Website - OKE,MySQL,Terraform. GBuenaflor/iSRAel-2022' + str(count) 
+    return 'Python with Flask Website - OKE,MySQL,Terraform. GBuenaflor/iSRAel-2022 ' + str(count) 
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
