@@ -1,3 +1,7 @@
+# Python Flask build_spec.yaml 
+# POC Develop By GB Buenaflor and isRAEL Casisdsid
+# OKE , MySQL ,Terraform ,DevOPS
+
 version: 0.1
 component: build
 timeoutInSeconds: 6000
@@ -24,12 +28,10 @@ steps:
 
   - type: Command
     timeoutInSeconds: 600
-    name: "Python Flask Install/Configuration. Develop By GB Buenaflor and Israel Casidsid" 
-    command: |
-      # mkdir -p workspace/node_python
-      # cd ${OCI_WORKSPACE_DIR}/node_python
+    name: "Python Flask Configuration." 
+    command: |            
       pwd
-      ls -la
+      #ls -la
       cd workspace/node_python
       mkdir flaskDIR
       cd flaskDIR
