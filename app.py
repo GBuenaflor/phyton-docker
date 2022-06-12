@@ -10,7 +10,7 @@ import mysql.connector
    # auth_plugin='mysql_native_password'
   ) 
    mycursor = mydb.cursor()
-   mycursor.execute("SELECT * FROM Table01")
+   mycursor.execute("SELECT user FROM Table01 WHERE ID = 1;")
    dbResult = mycursor.fetchone()
    print('MySQLDB Data: ')
    print(dbResult)
@@ -22,7 +22,7 @@ count = 0
 def index():
     global count
     count += 1           
-    return 'Python with Flask Website - OKE,MySQL,Terraform,DevOPS. GBuenaflor/iSRAel : ' + str(count)
+    return 'Python with Flask Website OKE,MySQL,Terraform,DevOPS. GBuenaflor/iSRAel : ' + str(count) + dbResult
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
