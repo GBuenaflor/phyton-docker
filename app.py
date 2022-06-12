@@ -1,6 +1,14 @@
+app = Flask(__name__)
+
+count = 0
+@app.route('/')
+def index():
+    global count    
+    count += 1
+
 from flask import Flask
 import mysql.connector
-
+ 
 mydb = mysql.connector.connect(
   host="10.0.50.252",
   user="OKEDBADminPOC",
@@ -14,15 +22,7 @@ mydb = mysql.connector.connect(
 #dbResult = mycursor.fetchone()
 #print('MySQLDB Data: ')
 #print(dbResult)
- 
-  
-app = Flask(__name__)
 
-count = 0
-@app.route('/')
-def index():
-    global count
-    count += 1
     return 'Python with Flask Website - OKE,MySQL,Terraform,DevOPS. GBuenaflor/iSRAel : ' + str(count) 
 
 if __name__ == '__main__':
