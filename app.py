@@ -1,5 +1,22 @@
 
 from flask import Flask
+import mysql.connector
+
+mydb = mysql.connector.connect(
+  host="10.0.50.252",
+  user="OKEDBADminPOC",
+  password='noP33swOrDinthi$$',
+  database="UPDatabase",
+  port=3306
+ # auth_plugin='mysql_native_password'
+) 
+
+mycursor = mydb.cursor()
+mycursor.execute("SELECT * FROM Table01")
+dbResult = mycursor.fetchone()
+print('MySQLDB Data: ')
+print(dbResult)
+
 app = Flask(__name__)
 
 count = 0
