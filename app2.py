@@ -1,4 +1,4 @@
-# Python Flask build_spec.yaml 
+# Python Flask 
 # POC Develop By GB Buenaflor and isRAEL Casisdsid
 # OKE , MySQL ,Terraform ,DevOPS
 
