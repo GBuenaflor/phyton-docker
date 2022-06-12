@@ -1,6 +1,8 @@
-# Demo Files
-- `app.py` - Source for demo app
-- `app2.py` - Source for demo app with MySQL
+# Phyton-Docker 
+
+- `app.py` - Simple app, no database.
+- `app2.py` - Simple app with MySQL Database.
 - `demo.yml` - Configuration for Kubernetes Deployment and LoadBalancer Service
-- `dockerfile` - dockerfile for image of demo app to run on Kubernetes
-- `requirements.txt` - For installing Flask when building docker image
+- `build_spec.yml` - Configuration use for Oracle DevOPS Build Pipeline
+- `dockerfile` - docker file  
+- `requirements.txt` - Required components for installing Flask and mysql-connector when building docker image
