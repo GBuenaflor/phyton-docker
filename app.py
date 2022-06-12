@@ -25,7 +25,10 @@ count = 0
 def index():
     global count
     count += 1
-    return 'Python with Flask Website.' + str(count) + 'MySQL Data: ' + str(dbResult)
+    return 'Python with Flask Website.'\n
+            + 'OKE,MySQL,Terraform,DevOPS'\n
+            + 'MySQL Data    : ' + str(dbResult)\n
+            + 'GB \ iSRAel   : ' + str(count)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
