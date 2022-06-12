@@ -9,11 +9,11 @@ mydb = mysql.connector.connect(
   auth_plugin='mysql_native_password'
 ) 
 
-mycursor = mydb.cursor()
-mycursor.execute("SELECT * FROM Table01")
-dbResult = mycursor.fetchone()
-print('MySQLDB Data: ')
-print(dbResult)
+#mycursor = mydb.cursor()
+#mycursor.execute("SELECT * FROM Table01")
+#dbResult = mycursor.fetchone()
+#print('MySQLDB Data: ')
+#print(dbResult)
  
   
 app = Flask(__name__)
