@@ -33,6 +33,7 @@ steps:
       pwd
       #ls -la
       cd workspace/node_python
+      ls -la
       mkdir flaskDIR
       cd flaskDIR
       python3 -m venv venv
@@ -40,7 +41,8 @@ steps:
       pip install --upgrade pip
       pip install flask 
       pip install mysql-connector-python
-      pip install -r requirements.txt
+      ls -la
+      pip install -r workspace/node_python/requirements.txt
       pip list
     onFailure:
       - type: Command
