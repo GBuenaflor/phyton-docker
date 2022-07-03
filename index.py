@@ -789,6 +789,6 @@ if __name__ == '__main__':
     webbrowser.open('http://127.0.0.1:32006/', new=0, autoraise=True)
 
     #####################################
-    app.run_server(debug=False)
+    app.run_server(debug=True)
     serve(0.0.0.0, port=32006)
     # serve(app.server, port=8050)
