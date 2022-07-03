@@ -1,0 +1,25 @@
+select appt_type_name as "Appointment Type", emp_class_name as "Type of Employee", COUNT(bp.bp_id) as "Count of BP"
+FROM basic_papers bp inner join appointment_types atp ON atp.appt_type_id = bp_appt_type_id
+INNER JOIN emp_classes ec ON ec.emp_class_id = bp.bp_emp_class_id
+WHERE bp_delete_ind = false
+GROUP BY appt_type_name, emp_class_name
+ORDER BY COUNT(bp.bp_id) DESC
+
+
+select emp_class_name as "Type of Employee", COUNT(bp.bp_id) as "Count of BP"
+FROM basic_papers bp inner join appointment_types atp ON atp.appt_type_id = bp_appt_type_id
+INNER JOIN emp_classes ec ON ec.emp_class_id = bp.bp_emp_class_id
+WHERE bp_delete_ind = false
+GROUP BY  emp_class_name
+
+
+select count(dpc_bp_approval_id) from dpc_bp_approvals
+select count(upc_bp_approval_id) from upc_bp_approvals
+
+
+select bp_status_name as "Status", COUNT(bp.bp_id) as "Count of BP"
+FROM basic_papers bp LEFT join bp_status_changes bsc ON bsc.bp_id = bp.bp_id
+INNER JOIN bp_statuses bs ON bs.bp_status_id = bsc.bp_status_id
+WHERE bp_delete_ind = false and bp_status_change_current_ind = True
+GROUP BY bp_status_name
+ORDER BY COUNT(bp.bp_id) DESC
