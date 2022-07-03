@@ -786,8 +786,9 @@ if __name__ == '__main__':
 
     # Remove when deploying to prod:::###########25240
     os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = "1"
-    webbrowser.open('http://127.0.0.1:8050/', new=0, autoraise=True)
+    webbrowser.open('http://127.0.0.1:32006/', new=0, autoraise=True)
 
     #####################################
     app.run_server(debug=False)
     serve(0.0.0.0, port=32006)
+    # serve(app.server, port=8050)
