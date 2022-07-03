@@ -33,8 +33,9 @@ app = dash.Dash(__name__, external_stylesheets=[
 
 #server = app.server
 server = '0.0.0.0'
+
 # Talisman(server) not working
-#sslify = SSLify(server)
+# sslify = SSLify(server)
 
 app.config.suppress_callback_exceptions = True
 app.css.config.serve_locally = True
