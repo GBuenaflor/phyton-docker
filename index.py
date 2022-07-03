@@ -789,4 +789,5 @@ if __name__ == '__main__':
 
     #####################################
     app.run_server(debug=True)
-    serve(app.server, port=8050)
+    #serve(app.server, port=8050)
+    app.run(host='0.0.0.0')
