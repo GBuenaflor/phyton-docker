@@ -17,8 +17,19 @@ spec:
     # enter the path to your image, be sure to include the correct region prefix    
         #image: <region-code>.ocir.io/<tenancy-namespace>/<repo-name>/<image-name>:<tag>
         image: sin.ocir.io/ax0ovmairnyq/devpoc-repo/demo:${BUILDRUN_HASH}
+		command: ["/bin/sh", "-ec", "sleep 3600"] 
+        imagePullPolicy: IfNotPresent
+        name: demo-deployment
+        restartPolicy: Always 
         ports:
         - containerPort: 5000
+		resources:
+          requests:
+            memory: "250Mi"
+            cpu: "250m"
+          limits:
+            memory: "500Mi"
+            cpu: "500m"
       imagePullSecrets:
     # enter the name of the secret you created  
       - name: ocisecret
