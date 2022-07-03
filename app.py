@@ -14,6 +14,7 @@ app = dash.Dash(__name__, external_stylesheets=[
                 "assets/bootstrap.css"], external_scripts=['https://kit.fontawesome.com/0656940dab.js'],)
 
 server = app.server
+server = '0.0.0.0'
 # Talisman(server) not working
 #sslify = SSLify(server)
 
