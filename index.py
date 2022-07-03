@@ -38,7 +38,8 @@ FOOTER_STYLE = {
     "background-color": "#f3f3f3ff",
 }
 
-server = app.server
+#server = app.server
+server = '0.0.0.0'
 # added to supress all callback exceptions, march 2, 2021
 app.config.suppress_callback_exceptions = True
 app.layout = html.Div([
@@ -789,4 +790,4 @@ if __name__ == '__main__':
 
     #####################################
     app.run_server(debug=False)
-    serve(app.server, port=8050)
+   # serve(app.server, port=8050)
