@@ -38,7 +38,9 @@ FOOTER_STYLE = {
     "background-color": "#f3f3f3ff",
 }
 
-server = app.server
+#server = app.server
+server = '0.0.0.0'
+
 # added to supress all callback exceptions, march 2, 2021
 app.config.suppress_callback_exceptions = True
 app.layout = html.Div([
