@@ -26,29 +26,6 @@ steps:
       export BUILDRUN_HASH=`echo ${OCI_BUILD_RUN_ID} | rev | cut -c 1-7`
       echo "BUILDRUN_HASH: " $BUILDRUN_HASH
 
- # - type: Command
- #   timeoutInSeconds: 600
- #   name: "Python Flask Configuration." 
- #   command: |            
- #     pwd
- #     #ls -la
- #     cd workspace/node_python
- #     mkdir flaskDIR
- #     cd flaskDIR
- #     python3 -m venv venv
- #     source venv/bin/activate
- #     pip install --upgrade pip
- #     pip install flask 
- #     pip install mysql-connector-python
- #     pip list
- #   onFailure:
- #     - type: Command
- #       command: |
- #         echo "Handling Failure"
- #         echo "Failure successfully handled"
- #       timeoutInSeconds: 40
- #       runAs: root      
-
   - type: Command
     timeoutInSeconds: 1200
     name: "Build container image"
