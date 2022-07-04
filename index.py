@@ -782,13 +782,14 @@ def display_page(pathname,  # sessionupdaterole,
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+     
+    app.run_server(host='0.0.0.0', port=5000, debug=False)
     
     # Remove when deploying to prod:::###########25240
-    os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = "1"
-    webbrowser.open('http://127.0.0.1:8050/', new=0, autoraise=True)
+    #os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = "1"
+    #webbrowser.open('http://127.0.0.1:8050/', new=0, autoraise=True)
 
     #####################################
-    app.run_server(debug=True)
+    #app.run_server(debug=True)
     #serve(app.server, port=8050)
     
