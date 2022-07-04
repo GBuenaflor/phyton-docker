@@ -32,18 +32,16 @@ app = dash.Dash(__name__, external_stylesheets=[
                 "assets/bootstrap.css"], external_scripts=['https://kit.fontawesome.com/0656940dab.js'],)
 
 #server = app.server
-#server = '0.0.0.0'
-server = flask.Flask(__name__)
-
-app.run_server(host="0.0.0.0", port=5000, debug=debug)
-
- # Talisman(server) not working
- # sslify = SSLify(server)
-
+server = '0.0.0.0'
+  
 app.config.suppress_callback_exceptions = True
 app.css.config.serve_locally = True
 app.scripts.config.serve_locally = True
 app.title = 'HRDO PUSO System'
 log = logging.getLogger('werkzeug')
 log.setLevel(logging.ERROR)
+
+if __name__ == '__main__':
+
+app.run_server(host="0.0.0.0", port=5000, debug=debug)
 
