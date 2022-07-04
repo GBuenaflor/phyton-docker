@@ -40,8 +40,3 @@ app.scripts.config.serve_locally = True
 app.title = 'HRDO PUSO System'
 log = logging.getLogger('werkzeug')
 log.setLevel(logging.ERROR)
-
-if __name__ == '__main__':
-
-app.run_server(host="0.0.0.0", port=5000, debug=debug)
-
