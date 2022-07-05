@@ -21,11 +21,11 @@ import os
 
 def getdblocation():
     db = mysql.connector.connect(
-        user="USERDATA",
-        password="PASsWORDHERE",
+        user="public",
+        password="pUb1Ic123!@#",
         host="10.0.50.252",
         port=3306,
-        database="UPDatabase",
+        database="public",
         # # # #    sslmode='require'
 
     )
@@ -33,11 +33,6 @@ def getdblocation():
     #db = psycopg2.connect(DATABASE_URL, sslmode='require')
     return db
 
-
-<<<<<<< HEAD
-
-=======
->>>>>>> bf4d323d3a38ccf7940a2b276168a6869659d9b3
 def querydatafromdatabase(sql):
     #    print(sql)
     db = getdblocation()
