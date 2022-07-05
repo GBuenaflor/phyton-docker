@@ -4,20 +4,35 @@ import pandas as pd
 import os
 
 
-def getdblocation():
+# def getdblocation():
+#
+#     db = psycopg2.connect(
+#         user="postgres",
+#         password="password",
+#         host="localhost",
+#         port=5432,
+#         database="hrdo_localdb_schemaonly_test2",
+#         # # # #    sslmode='require'
+#
+#     )
+#     #DATABASE_URL = os.environ['DATABASE_URL']
+#     #db = psycopg2.connect(DATABASE_URL, sslmode='require')
+#     return db
 
-    db = psycopg2.connect(
-        user="postgres",
-        password="password",
-        host="localhost",
-        port=5432,
-        database="hrdo_localdb_schemaonly_test2",
+def getdblocation():
+    db = mysql.connector.connect(
+        user="USERDATA",
+        password="PASsWORDHERE",
+        host="10.0.50.252",
+        port=3306,
+        database="UPDatabase",
         # # # #    sslmode='require'
 
     )
     #DATABASE_URL = os.environ['DATABASE_URL']
     #db = psycopg2.connect(DATABASE_URL, sslmode='require')
     return db
+
 
 
 def querydatafromdatabase(sql):
