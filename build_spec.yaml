@@ -1,4 +1,4 @@
-# Python Flask build_spec.yaml 
+# Python Flask build_spec.yaml
 # POC Develop By GB Buenaflor and isRAEL Casisdsid
 # OKE , MySQL ,Terraform ,DevOPS
 
@@ -7,18 +7,18 @@ component: build
 timeoutInSeconds: 6000
 runAs: root
 shell: bash
-env: 
+env:
   variables:
-    key: "value"    
- 
+    key: "value"
+
   vaultVariables:
   #  EXAMPLE_SECRET: "YOUR-SECRET-OCID"
-   
+
   exportedVariables:
     - BUILDRUN_HASH
     - DOCKERIMAGE_ID
-    
-steps:  
+
+steps:
   - type: Command
     name: "Define unique image tag"
     timeoutInSeconds: 40
@@ -26,39 +26,13 @@ steps:
       export BUILDRUN_HASH=`echo ${OCI_BUILD_RUN_ID} | rev | cut -c 1-7`
       echo "BUILDRUN_HASH: " $BUILDRUN_HASH
 
-<<<<<<< HEAD
- # - type: Command
- #   timeoutInSeconds: 600
- #   name: "Python Flask Configuration." 
- #   command: |            
- #     pwd
- #     #ls -la
- #     cd workspace/node_python
- #     mkdir flaskDIR
- #     cd flaskDIR
- #     python3 -m venv venv
- #     source venv/bin/activate
- #     pip install --upgrade pip
- #     pip install flask 
- #     pip install mysql-connector-python
- #     pip list
- #   onFailure:
- #     - type: Command
- #       command: |
- #         echo "Handling Failure"
- #         echo "Failure successfully handled"
- #       timeoutInSeconds: 40
- #       runAs: root      
-
-=======
->>>>>>> bf4d323d3a38ccf7940a2b276168a6869659d9b3
   - type: Command
     timeoutInSeconds: 1200
     name: "Build container image"
     command: |
      # cd ${OCI_WORKSPACE_DIR}/node_python
       pwd
-      docker build --pull --rm -t demo . 
+      docker build --pull --rm -t demo .
       docker images
       DOCKERIMAGE_ID=$(docker images -q --format='{{.ID}}' | head -1)
       docker tag $DOCKERIMAGE_ID sin.ocir.io/ax0ovmairnyq/devpoc-repo/demo:${BUILDRUN_HASH}
@@ -72,9 +46,9 @@ steps:
           echo "Handling Failure"
           echo "Failure successfully handled"
         timeoutInSeconds: 40
-        runAs: root  
-        
+        runAs: root
+
 outputArtifacts:
   - name: Dev-POC-DevOpsBuild
-    type: DOCKER_IMAGE 
-    location: sin.ocir.io/ax0ovmairnyq/devpoc-repo/demo:${BUILDRUN_HASH} 
+    type: DOCKER_IMAGE
+    location: sin.ocir.io/ax0ovmairnyq/devpoc-repo/demo:${BUILDRUN_HASH}
