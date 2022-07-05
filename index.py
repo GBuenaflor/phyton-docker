@@ -38,7 +38,9 @@ FOOTER_STYLE = {
     "background-color": "#f3f3f3ff",
 }
 
-server = app.server
+#server = app.server
+server = '0.0.0.0'
+
 # added to supress all callback exceptions, march 2, 2021
 app.config.suppress_callback_exceptions = True
 app.layout = html.Div([
@@ -782,11 +784,14 @@ def display_page(pathname,  # sessionupdaterole,
 
 
 if __name__ == '__main__':
-
+     
+    app.run_server(host='0.0.0.0', port=5000, debug=False)
+    
     # Remove when deploying to prod:::###########25240
-    os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = "1"
-    webbrowser.open('http://127.0.0.1:8050/', new=0, autoraise=True)
+    #os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = "1"
+    #webbrowser.open('http://127.0.0.1:8050/', new=0, autoraise=True)
 
     #####################################
-    app.run_server(debug=False)
-    serve(app.server, port=8050)
+    #app.run_server(debug=True)
+    #serve(app.server, port=8050)
+    

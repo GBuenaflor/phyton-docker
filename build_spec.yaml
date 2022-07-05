@@ -26,6 +26,7 @@ steps:
       export BUILDRUN_HASH=`echo ${OCI_BUILD_RUN_ID} | rev | cut -c 1-7`
       echo "BUILDRUN_HASH: " $BUILDRUN_HASH
 
+<<<<<<< HEAD
  # - type: Command
  #   timeoutInSeconds: 600
  #   name: "Python Flask Configuration." 
@@ -49,6 +50,8 @@ steps:
  #       timeoutInSeconds: 40
  #       runAs: root      
 
+=======
+>>>>>>> bf4d323d3a38ccf7940a2b276168a6869659d9b3
   - type: Command
     timeoutInSeconds: 1200
     name: "Build container image"

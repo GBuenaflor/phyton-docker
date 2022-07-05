@@ -19,6 +19,13 @@ spec:
         image: sin.ocir.io/ax0ovmairnyq/devpoc-repo/demo:${BUILDRUN_HASH}
         ports:
         - containerPort: 5000
+	resources:
+          requests:
+            memory: "250Mi"
+            cpu: "250m"
+          limits:
+            memory: "500Mi"
+            cpu: "500m"
       imagePullSecrets:
     # enter the name of the secret you created  
       - name: ocisecret

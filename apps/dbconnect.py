@@ -34,7 +34,10 @@ def getdblocation():
     return db
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> bf4d323d3a38ccf7940a2b276168a6869659d9b3
 def querydatafromdatabase(sql):
     #    print(sql)
     db = getdblocation()
