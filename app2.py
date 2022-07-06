@@ -7,9 +7,9 @@ import mysql.connector
 
 mydb = mysql.connector.connect(
   host="10.0.50.252",
-  user="USERDATA",
-  password='PASsWORDHERE',
-  database="UPDatabase",
+  user="public",
+  password='pUb1Ic123!@#',
+  database="public",
   port=3306
   #auth_plugin='mysql_native_password'
 )
