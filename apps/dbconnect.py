@@ -36,19 +36,13 @@ import mysql.connector
 
 def getdblocation():
     try:
-        db = mysql.connector.connect(
-            user="OKEDBADmin",
-            password='n0P55sw0rDInthi%%',
+        
+       db = mysql.connector.connect(
             host="10.0.50.252",
-            port=3306,
+            user="public",
+            password='pUb1Ic123!@#',
             database="public",
-            auth_plugin='mysql_native_password'
-
-            # host="10.0.50.252",
-            # user="USERDATA",
-            # password='PASsWORDHERE',
-            # database="UPDatabase",
-            # port=3306
+            port=3306 
         )
     except:
         db = ''
