@@ -22,10 +22,11 @@ import os
 def getdblocation():
     db = mysql.connector.connect(
         user="public",
-        password="pUb1Ic123!@#",
+        password='pUb1Ic123!@#',
         host="10.0.50.252",
         port=3306,
         database="public",
+        auth_plugin='mysql_native_password'
         # # # #    sslmode='require'
 
     )
