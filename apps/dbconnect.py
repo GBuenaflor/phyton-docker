@@ -51,6 +51,7 @@ def getdblocation():
             # port=3306
         )
     except:
+        db = ''
         print('error in connection')
     return db
 
