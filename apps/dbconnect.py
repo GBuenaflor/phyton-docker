@@ -2,7 +2,7 @@ import psycopg2
 from psycopg2 import pool
 import pandas as pd
 import os
-
+import mysql.connector
 
 # def getdblocation():
 #
@@ -19,19 +19,41 @@ import os
 #     #db = psycopg2.connect(DATABASE_URL, sslmode='require')
 #     return db
 
-def getdblocation():
-    db = mysql.connector.connect(
-        user="public",
-        password="pUb1Ic123!@#",
-        host="10.0.50.252",
-        port=3306,
-        database="public",
-        # # # #    sslmode='require'
+# def getdblocation():
+#     db = mysql.connector.connect(
+#         user="public",
+#         password="pUb1Ic123!@#",
+#         host="10.0.50.252",
+#         port=3306,
+#         database="public",
+#         # # # #    sslmode='require'
+#
+#     )
+#     #DATABASE_URL = os.environ['DATABASE_URL']
+#     #db = psycopg2.connect(DATABASE_URL, sslmode='require')
+#     return db
 
-    )
-    #DATABASE_URL = os.environ['DATABASE_URL']
-    #db = psycopg2.connect(DATABASE_URL, sslmode='require')
+
+def getdblocation():
+    try:
+        db = mysql.connector.connect(
+            user="OKEDBADmin",
+            password='n0P55sw0rDInthi%%',
+            host="10.0.50.252",
+            port=3306,
+            database="public",
+            auth_plugin='mysql_native_password'
+
+            # host="10.0.50.252",
+            # user="USERDATA",
+            # password='PASsWORDHERE',
+            # database="UPDatabase",
+            # port=3306
+        )
+    except:
+        print('error in connection')
     return db
+
 
 def querydatafromdatabase(sql):
     #    print(sql)
